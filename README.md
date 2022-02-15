@@ -1,6 +1,6 @@
 # mergeGitRepos
 
-`mergeGitRepos` is a simple Python script to merge several Git repositories into one.
+`mergeGitRepos` is a simple Python script to merge several Git repositories into one, preserving history and mapping branches.
 
 ## Features
 - Simple Yaml configuration
