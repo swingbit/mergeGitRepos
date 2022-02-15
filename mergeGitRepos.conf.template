@@ -1,0 +1,27 @@
+# Name of the new repository (only created locally)
+newrepo: OneAwesomeProjectToRuleThemAll
+
+# Mapping of repositories to subfolders of newrepo
+# Mapping syntax:
+# mapping:
+#   <SourceRepo>:
+#     gitparent: <git URL> containing <SourceRepo>
+#     # optional: rename the source repository when converting it into a subfolder of newrepo. If absent, keep the same name.
+#     subfolder: <DestSubFolder>
+#     branches:
+#       # a source branch can be migrated to a single destination branch or to a list of destination branches
+#       <SourceBranch>: <DestBranch> | [ <DestBranch1>, <DestBranch2>, ... ]
+
+mapping:
+  AwesomeProject1:
+    subfolder: AwesomeModule1
+    branches:
+      master: master
+      release/1.0: release/1.0
+  AwesomeProject2:
+    subfolder: AwesomeModule1
+    branches:
+      release/0.3: [ master, release/1.0 ]
+      release/0.2: release/0.9
+
+
