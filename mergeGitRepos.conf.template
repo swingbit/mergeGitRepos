@@ -19,7 +19,7 @@ mapping:
       master: master
       release/1.0: release/1.0
   AwesomeProject2:
-    subfolder: AwesomeModule1
+    subfolder: AwesomeModule2
     branches:
       release/0.3: [ master, release/1.0 ]
       release/0.2: release/0.9
