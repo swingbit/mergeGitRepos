@@ -1,8 +1,11 @@
+###########
+# Syntax
+###########
+
 # Name of the new repository (only created locally)
-newrepo: OneAwesomeProjectToRuleThemAll
+# newrepo: <name of the new repository>
 
 # Mapping of repositories to subfolders of newrepo
-# Mapping syntax:
 # mapping:
 #   <SourceRepo>:
 #     gitparent: <git URL> containing <SourceRepo>
@@ -12,16 +15,30 @@ newrepo: OneAwesomeProjectToRuleThemAll
 #       # a source branch can be migrated to a single destination branch or to a list of destination branches
 #       <SourceBranch>: <DestBranch> | [ <DestBranch1>, <DestBranch2>, ... ]
 
+
+
+###########
+# Example
+###########
+
+# The following example merges repositories 
+# - https://github.com/docker/compose
+# - https://github.com/docker/cli
+# as subfolders of a new repository docker_stuff
+# Only the selected branches are imported and they are optionally renamed.
+
+newrepo: docker_stuff
 mapping:
-  AwesomeProject1:
-    subfolder: AwesomeModule1
+  compose:
+    gitparent: https://github.com/docker
+    subfolder: docker-compose
     branches:
-      master: master
-      release/1.0: release/1.0
-  AwesomeProject2:
-    subfolder: AwesomeModule2
+      v2            # import branch v2 as-is
+      master: main  # rename branch master into main
+  cli:
+    gitparent: https://github.com/docker
+    subfolder: docker-cli
     branches:
-      release/0.3: [ master, release/1.0 ]
-      release/0.2: release/0.9
+      master: main  # rename branch master into main
 
 
