@@ -33,8 +33,8 @@ mapping:
     gitparent: https://github.com/docker
     subfolder: docker-compose
     branches:
-      v2: v2        # import branch v2 as-is
-      master: main  # rename branch master into main
+      v1: v1        # import branch v1 as-is
+      main: main    # import main as-is
   cli:
     gitparent: https://github.com/docker
     subfolder: docker-cli
